@@ -35,7 +35,7 @@ sudo apt-get install -y python2.7
 sudo apt-get install -y python-virtualenv
 
 echo "[+] Cloning project..."
-git clone https://github.com/aseemm/python-template.git .
+git clone https://github.com/aseemm/python-template.git python-template
 
 echo "[+] Deployment complete!"
 exit 0
