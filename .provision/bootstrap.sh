@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Usage: ./bootstrap.sh [dev|prod]
+# Usage: ./bootstrap.sh [project]
 
-PROJECT=${1:-basic}
+PROJECT=${1:-python-template}
 
 echo "[+] Provisioning for $PROJECT..."
 sudo apt-get update
@@ -30,17 +30,12 @@ ln -s ~/.dotfiles/.emacs ~/.emacs
 ln -s ~/.dotfiles/elisp ~/elisp
 ln -s ~/.dotfiles/Xresources ~/Xresources
 
-# echo "[+] Installing g++..."
-# sudo apt-get -y install build-essential
-# sudo apt-get -y install ddd
-# sudo apt-get -y install gtkwave
-# sudo apt-get -y install tkcvs
+echo "[+] Installing Python..."
+sudo apt-get install -y python2.7
+sudo apt-get install -y python-virtualenv
 
-if [[ "$PROJECT" == "scraper" ]]; then
-    echo "[+] Installing Python..."
-    sudo apt-get install -y python2.7
-    sudo apt-get install -y python-virtualenv
-fi
+echo "[+] Cloning project..."
+git clone https://github.com/aseemm/python-template.git .
 
 echo "[+] Deployment complete!"
 exit 0

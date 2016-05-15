@@ -17,7 +17,7 @@ Vagrant.configure(2) do |config|
   # config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box"
   config.vm.box = "ubuntu/trusty64"
   config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box"
-  config.vm.hostname = "fluorine"
+  config.vm.hostname = "helium"
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
   # Disable automatic box update checking. If you disable this, then
@@ -74,5 +74,5 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get update
   #   sudo apt-get install -y apache2
   # SHELL
-  config.vm.provision :shell, :path => ".provision/bootstrap.sh", :args => ["basic"], privileged: false
+  config.vm.provision :shell, :path => ".provision/bootstrap.sh", :args => ["python-template"], privileged: false
 end
