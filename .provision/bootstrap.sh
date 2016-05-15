@@ -33,6 +33,7 @@ ln -s ~/.dotfiles/Xresources ~/Xresources
 echo "[+] Installing Python..."
 sudo apt-get install -y python2.7
 sudo apt-get install -y python-virtualenv
+sudo apt-get install -y python-nose
 
 echo "[+] Cloning project..."
 git clone https://github.com/aseemm/python-template.git python-template
